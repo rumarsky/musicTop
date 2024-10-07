@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music list</title>
+</head>
+<body>
+    <a href="mainPage.html">Самые популярные треки</a><br>
+    <a href="musicList.html"><font size="5">Список самых популярных треков</font></a>
+    <hr>
+    <details>
+        <summary>График</summary>
+        <form>
+            <fieldset>
+            <legend><b>Аргумент</b></legend>
+            <input type="radio" name="argue" value="0">Исполнитель<br>
+            <input type="radio" name="argue" value="1">Жанр<br>
+            <input type="radio" name="argue" value="2">Год
+            </fieldset><p></p>
+            <fieldset>
+            <legend><b>Значения</b><br></legend>
+            <input type="checkbox" name="value" value="0">Прослушивания (сумма)<br>
+            <input type="checkbox" name="value" value="1">Количество треков<br>
+            </fieldset>
+            <p><input type="button" value="Построить"></p>
+        </form>
+    </details>
+    <details>
+        <summary>Фильтр</summary>
+        <form>
+            <fieldset>
+                <legend><b>Поля</b></legend>
+                <table>
+                    <tr><td>Название трека:</td><td><input type="text"></td></tr>
+                    <tr><td>Исполнитель:</td><td><input type="text"></td></tr>
+                    <tr><td>Альбом:</td><td><input type="text"></td></tr>
+                    <tr><td>Год выпуска: </td><td>от <input type="text"> до <input type="text"></td></tr>
+                    <tr><td>Жанр:</td><td><input type="text"></td></tr>
+                    <tr><td>Слушателей за месяц:</td><td>от <input type="text"> до <input type="text"></td></tr>
+                    <tr><td>Прослушивания:</td><td>от <input type="text"> до <input type="text"></td></tr>
+                </table>
+            </fieldset>
+            <p><input type="button" value="Найти"></p>
+        </form>
+    </details>
+    <details>
+        <summary>Сортировка</summary>
+        <form>
+            <fieldset>
+                <legend><b>Уровни</b></legend>
+                <table>
+                    <tr><td>Первый уровень:</td><td><select name="bool1">
+                        <option value="0">Нет</option>
+                        <option value="1">Название трека</option>
+                        <option value="2">Исполнитель</option>
+                        <option value="3">Альбом</option>
+                        <option value="4">Год выпуска</option>
+                        <option value="5">Жанр</option>
+                        <option value="6">Слушателей за месяц</option>
+                        <option value="7">Прослушивания</option>
+                       </select></td><td>по убыванию?<input type="checkbox" name="sort"></td></tr>
+                    <tr><td>Второй уровень:</td><td><select name="bool2">
+                        <option value="0">Нет</option>
+                        <option value="1">Название трека</option>
+                        <option value="2">Исполнитель</option>
+                        <option value="3">Альбом</option>
+                        <option value="4">Год выпуска</option>
+                        <option value="5">Жанр</option>
+                        <option value="6">Слушателей за месяц</option>
+                        <option value="7">Прослушивания</option>
+                       </select></td><td>по убыванию?<input type="checkbox" name="sort"></td></tr>
+                    <tr><td>Третий уровень:</td><td><select name="bool3">
+                        <option value="0">Нет</option>
+                        <option value="1">Название трека</option>
+                        <option value="2">Исполнитель</option>
+                        <option value="3">Альбом</option>
+                        <option value="4">Год выпуска</option>
+                        <option value="5">Жанр</option>
+                        <option value="6">Слушателей за месяц</option>
+                        <option value="7">Прослушивания</option>
+                       </select></td><td>по убыванию?<input type="checkbox" name="sort"></td></tr>
+                </table>
+            </fieldset>
+            <p><input type="button" value="Сортировать"></p>
+        </form>
+    </details>
+    <table border="1" cellpadding = "5" cellspacing="0">
+        <tr>
+            <th>Название трека</th>
+            <th>Исполнитель</th>
+            <th>Альбом</th>
+            <th>Год выпуска</th>
+            <th>Жанр</th>
+            <th>Слушателей за месяц</th>
+            <th>Прослушивания</th>
+        </tr>
+        <tr>
+            <td>Асфальт</td>
+            <td>Jakone</td>
+            <td>Сингл</td>
+            <td>2024</td>
+            <td>русская поп-музыка</td>
+            <td>7219906</td>
+            <td>355300</td>
+        </tr>
+        <tr>
+            <td>Пыяла</td>
+            <td>АИГЕЛ</td>
+            <td>Пыяла</td>
+            <td>2000</td>
+            <td>местная инди-музыка</td>
+            <td>2901396</td>
+            <td>575800</td>
+        </tr>
+        <tr>
+            <td>Адская колыбельная</td>
+            <td>Пошлая Молли</td>
+            <td>Сингл</td>
+            <td>2024</td>
+            <td>русская поп-музыка</td>
+            <td>4921481</td>
+            <td>488200</td>
+        </tr>
+        <tr>
+            <td>Turbo (Majestic)</td>
+            <td>Big Baby Tape</td>
+            <td>Сингл</td>
+            <td>2024</td>
+            <td>русский рэп</td>
+            <td>6257952</td>
+            <td>65900</td>
+        </tr>
+        <tr>
+            <td>Кукла колдуна</td>
+            <td>Король и Шут</td>
+            <td>Акустический альбом</td>
+            <td>1999</td>
+            <td>панк</td>
+            <td>5983898</td>
+            <td>518300</td>
+        </tr>
+        <tr>
+            <td>Привыкаю</td>
+            <td>MACAN</td>
+            <td>I AM</td>
+            <td>2024</td>
+            <td>русский рэп</td>
+            <td>6837774</td>
+            <td>140200</td>
+        </tr>
+        <tr>
+            <td>Прощание</td>
+            <td>Три дня дождя</td>
+            <td>melancholia</td>
+            <td>2023</td>
+            <td>русская поп-музыка</td>
+            <td>3959412</td>
+            <td>871500</td>
+        </tr>
+        <tr>
+            <td>Дурак и молния</td>
+            <td>Король и Шут</td>
+            <td>Камнем по голове</td>
+            <td>1996</td>
+            <td>панк</td>
+            <td>5983898</td>
+            <td>216500</td>
+        </tr>
+        <tr>
+            <td>I Got Love</td>
+            <td>Miyagi & Эндшпиль</td>
+            <td>Сингл</td>
+            <td>2016</td>
+            <td>русский рэп</td>
+            <td>5446207</td>
+            <td>968100</td>
+        </tr>
+        <tr>
+            <td>Синяя Луна</td>
+            <td>Моя Мишель</td>
+            <td>Сингл</td>
+            <td>2022</td>
+            <td>русская поп-музыка</td>
+            <td>5432876</td>
+            <td>234500</td>
+        </tr>
+        <tr>
+            <td>Ностальгия</td>
+            <td>Слава КПСС</td>
+            <td>Сингл</td>
+            <td>2023</td>
+            <td>альтернативный рэп</td>
+            <td>3987231</td>
+            <td>412900</td>
+        </tr>
+        <tr>
+            <td>Мальчик на танцполе</td>
+            <td>Клава Кока</td>
+            <td>Сингл</td>
+            <td>2021</td>
+            <td>русская поп-музыка</td>
+            <td>6745903</td>
+            <td>329800</td>
+        </tr>
+        <tr>
+            <td>Пойдем со мной</td>
+            <td>Земфира</td>
+            <td>Вендетта</td>
+            <td>2015</td>
+            <td>альтернативный рок</td>
+            <td>2312124</td>
+            <td>212300</td>
+        </tr>
+        <tr>
+            <td>Поговори со мной</td>
+            <td>Монеточка</td>
+            <td>Сингл</td>
+            <td>2020</td>
+            <td>инди-поп</td>
+            <td>7856423</td>
+            <td>342100</td>
+        </tr>
+        <tr>
+            <td>Фонари</td>
+            <td>Федук</td>
+            <td>Сингл</td>
+            <td>2018</td>
+            <td>хип-хоп</td>
+            <td>5768910</td>
+            <td>521200</td>
+        </tr>
+        <tr>
+            <td>Пыль</td>
+            <td>Баста</td>
+            <td>Пыль</td>
+            <td>2016</td>
+            <td>русский рэп</td>
+            <td>8321456</td>
+            <td>611400</td>
+        </tr>
+        <tr>
+            <td>Холодок</td>
+            <td>СБПЧ</td>
+            <td>Сингл</td>
+            <td>2024</td>
+            <td>инди-рок</td>
+            <td>4129032</td>
+            <td>289700</td>
+        </tr>
+        <tr>
+            <td>Млечный путь</td>
+            <td>Мумий Тролль</td>
+            <td>Точка</td>
+            <td>2003</td>
+            <td>альтернативный рок</td>
+            <td>3897123</td>
+            <td>182500</td>
+        </tr>
+        <tr>
+            <td>Последний герой</td>
+            <td>Гречка</td>
+            <td>Сингл</td>
+            <td>2019</td>
+            <td>инди-поп</td>
+            <td>2745890</td>
+            <td>399100</td>
+        </tr>
+        <tr>
+            <td>Морозы</td>
+            <td>ЛСП</td>
+            <td>Сингл</td>
+            <td>2021</td>
+            <td>трэп</td>
+            <td>6104220</td>
+            <td>484300</td>
+        </tr>
+        <tr>
+            <td>Закат</td>
+            <td>Ногу Свело!</td>
+            <td>Сингл</td>
+            <td>2010</td>
+            <td>рок</td>
+            <td>2223912</td>
+            <td>199400</td>
+        </tr>
+        <tr>
+            <td>Небо над нами</td>
+            <td>IOWA</td>
+            <td>Малыш</td>
+            <td>2017</td>
+            <td>поп-рок</td>
+            <td>4543201</td>
+            <td>311800</td>
+        </tr>
+        <tr>
+            <td>Пальцы</td>
+            <td>Луна</td>
+            <td>Сингл</td>
+            <td>2020</td>
+            <td>инди-поп</td>
+            <td>3874452</td>
+            <td>215700</td>
+        </tr>
+        <tr>
+            <td>Радио</td>
+            <td>Сансара</td>
+            <td>Сингл</td>
+            <td>2023</td>
+            <td>инди-рок</td>
+            <td>2687120</td>
+            <td>298600</td>
+        </tr>
+        <tr>
+            <td>Беспокойное сердце</td>
+            <td>Ю-Питер</td>
+            <td>Сингл</td>
+            <td>2012</td>
+            <td>рок</td>
+            <td>1984776</td>
+            <td>143200</td>
+        </tr>
+        <tr>
+            <td>Жить в кайф</td>
+            <td>Джиган</td>
+            <td>Сингл</td>
+            <td>2015</td>
+            <td>хип-хоп</td>
+            <td>8012345</td>
+            <td>512100</td>
+        </tr>
+        <tr>
+            <td>Новая волна</td>
+            <td>Звери</td>
+            <td>Сингл</td>
+            <td>2008</td>
+            <td>поп-рок</td>
+            <td>7654321</td>
+            <td>301200</td>
+        </tr>
+        <tr>
+            <td>Глупые песни</td>
+            <td>Little Big</td>
+            <td>Сингл</td>
+            <td>2019</td>
+            <td>рэп-панк</td>
+            <td>9234876</td>
+            <td>689300</td>
+        </tr>
+        <tr>
+            <td>Светофор</td>
+            <td>Пицца</td>
+            <td>Чувства</td>
+            <td>2014</td>
+            <td>поп</td>
+            <td>3782123</td>
+            <td>214500</td>
+        </tr>
+        <tr>
+            <td>Этажи</td>
+            <td>Ёлка</td>
+            <td>Этажи</td>
+            <td>2013</td>
+            <td>поп</td>
+            <td>6091344</td>
+            <td>512300</td>
+        </tr>
+        <tr>
+            <td>Давай запомним</td>
+            <td>Светлана Лобода</td>
+            <td>Сингл</td>
+            <td>2020</td>
+            <td>поп-музыка</td>
+            <td>7523120</td>
+            <td>478200</td>
+        </tr>
+        <tr>
+            <td>Останусь</td>
+            <td>Градусы</td>
+            <td>Сингл</td>
+            <td>2012</td>
+            <td>поп</td>
+            <td>5678902</td>
+            <td>198300</td>
+        </tr>
+        <tr>
+            <td>Там, где нас нет</td>
+            <td>Мот</td>
+            <td>Сингл</td>
+            <td>2014</td>
+            <td>русская поп-музыка</td>
+            <td>12110500</td>
+            <td>800450</td>
+        </tr>
+        <tr>
+            <td>Облака</td>
+            <td>Татьяна Буланова</td>
+            <td>Сингл</td>
+            <td>2000</td>
+            <td>русская поп-музыка</td>
+            <td>4320900</td>
+            <td>300600</td>
+        </tr>
+        <tr>
+            <td>Магнит</td>
+            <td>Кирилл</td>
+            <td>Магнит</td>
+            <td>2023</td>
+            <td>русская поп-музыка</td>
+            <td>5328934</td>
+            <td>421200</td>
+        </tr>
+        <tr>
+            <td>Город грехов</td>
+            <td>Пурпурный</td>
+            <td>Сингл</td>
+            <td>2024</td>
+            <td>русский рэп</td>
+            <td>6102789</td>
+            <td>308700</td>
+        </tr>
+        <tr>
+            <td>Свет ночи</td>
+            <td>Баста</td>
+            <td>Магнит</td>
+            <td>2017</td>
+            <td>русский рэп</td>
+            <td>8203456</td>
+            <td>432100</td>
+        </tr>
+        <tr>
+            <td>Битые стекла</td>
+            <td>Земфира</td>
+            <td>Сингл</td>
+            <td>2015</td>
+            <td>альтернативный рок</td>
+            <td>3912456</td>
+            <td>202300</td>
+        </tr>
+        <tr>
+            <td>Головоломка</td>
+            <td>Мумий Тролль</td>
+            <td>Точка</td>
+            <td>2003</td>
+            <td>альтернативный рок</td>
+            <td>4123789</td>
+            <td>158400</td>
+        </tr>
+        <tr>
+            <td>Чайки</td>
+            <td>IOWA</td>
+            <td>Малыш</td>
+            <td>2017</td>
+            <td>поп-рок</td>
+            <td>4789132</td>
+            <td>345600</td>
+        </tr>
+        <tr>
+            <td>Закрой глаза</td>
+            <td>Сансара</td>
+            <td>Сингл</td>
+            <td>2023</td>
+            <td>инди-рок</td>
+            <td>2567890</td>
+            <td>287400</td>
+        </tr>
+        <tr>
+            <td>Эхо</td>
+            <td>Пицца</td>
+            <td>Чувства</td>
+            <td>2014</td>
+            <td>поп</td>
+            <td>3456789</td>
+            <td>198700</td>
+        </tr>
+        <tr>
+            <td>На грани</td>
+            <td>Ю-Питер</td>
+            <td>Сингл</td>
+            <td>2012</td>
+            <td>рок</td>
+            <td>2912456</td>
+            <td>182300</td>
+        </tr>
+        <tr>
+            <td>Стекло</td>
+            <td>Король и Шут</td>
+            <td>Камнем по голове</td>
+            <td>1996</td>
+            <td>панк</td>
+            <td>5123789</td>
+            <td>217800</td>
+        </tr>
+        <tr>
+            <td>Паруса</td>
+            <td>Джиган</td>
+            <td>Сингл</td>
+            <td>2015</td>
+            <td>хип-хоп</td>
+            <td>7876345</td>
+            <td>498700</td>
+        </tr>
+        <tr>
+            <td>Стихи</td>
+            <td>ЛСП</td>
+            <td>Сингл</td>
+            <td>2021</td>
+            <td>трэп</td>
+            <td>6123098</td>
+            <td>509800</td>
+        </tr>
+        <tr>
+            <td>Мечты</td>
+            <td>Гречка</td>
+            <td>Сингл</td>
+            <td>2019</td>
+            <td>инди-поп</td>
+            <td>2768890</td>
+            <td>312900</td>
+        </tr>
+        <tr>
+            <td>Танцы на крыше</td>
+            <td>Клава Кока</td>
+            <td>Сингл</td>
+            <td>2021</td>
+            <td>русская поп-музыка</td>
+            <td>6543123</td>
+            <td>328200</td>
+        </tr>
+        <tr>
+            <td>Прыжок</td>
+            <td>Слава КПСС</td>
+            <td>Сингл</td>
+            <td>2023</td>
+            <td>альтернативный рэп</td>
+            <td>4345231</td>
+            <td>399200</td>
+        </tr>
+        <tr>
+            <td>Сквозь ночи</td>
+            <td>Федук</td>
+            <td>Сингл</td>
+            <td>2018</td>
+            <td>хип-хоп</td>
+            <td>5678123</td>
+            <td>512800</td>
+        </tr>
+        <tr>
+            <td>Светит луна</td>
+            <td>Три дня дождя</td>
+            <td>melancholia</td>
+            <td>2023</td>
+            <td>русская поп-музыка</td>
+            <td>4321789</td>
+            <td>671500</td>
+        </tr>
+        <tr>
+            <td>Сила</td>
+            <td>Little Big</td>
+            <td>Сингл</td>
+            <td>2019</td>
+            <td>рэп-панк</td>
+            <td>8234876</td>
+            <td>589300</td>
+        </tr>
+        <tr>
+            <td>Словно ветер</td>
+            <td>Моя Мишель</td>
+            <td>Сингл</td>
+            <td>2022</td>
+            <td>русская поп-музыка</td>
+            <td>5678543</td>
+            <td>229400</td>
+        </tr>
+        <tr>
+            <td>Река</td>
+            <td>АИГЕЛ</td>
+            <td>Пыяла</td>
+            <td>2000</td>
+            <td>местная инди-музыка</td>
+            <td>2765890</td>
+            <td>507600</td>
+        </tr>
+        <tr>
+            <td>Ловец</td>
+            <td>Big Baby Tape</td>
+            <td>Сингл</td>
+            <td>2024</td>
+            <td>русский рэп</td>
+            <td>6789321</td>
+            <td>102800</td>
+        </tr>
+        <tr>
+            <td>Звездный свет</td>
+            <td>Земфира</td>
+            <td>Вендетта</td>
+            <td>2015</td>
+            <td>альтернативный рок</td>
+            <td>3112987</td>
+            <td>198600</td>
+        </tr>
+        <tr>
+            <td>Беги</td>
+            <td>Мумий Тролль</td>
+            <td>Точка</td>
+            <td>2003</td>
+            <td>альтернативный рок</td>
+            <td>3982123</td>
+            <td>186500</td>
+        </tr>
+        <tr>
+            <td>Крик</td>
+            <td>IOWA</td>
+            <td>Малыш</td>
+            <td>2017</td>
+            <td>поп-рок</td>
+            <td>4765890</td>
+            <td>302700</td>
+        </tr>
+        <tr>
+            <td>Ночь</td>
+            <td>Баста</td>
+            <td>Пыль</td>
+            <td>2016</td>
+            <td>русский рэп</td>
+            <td>7312900</td>
+            <td>541200</td>
+        </tr>
+        <tr>
+            <td>Сон</td>
+            <td>Пурпурный</td>
+            <td>Сингл</td>
+            <td>2024</td>
+            <td>русская поп-музыка</td>
+            <td>4987321</td>
+            <td>322700</td>
+        </tr>
+        <tr>
+            <td>Птица</td>
+            <td>Король и Шут</td>
+            <td>Камнем по голове</td>
+            <td>1996</td>
+            <td>панк</td>
+            <td>6321789</td>
+            <td>297300</td>
+        </tr>
+        <tr>
+            <td>Тени</td>
+            <td>Гречка</td>
+            <td>Сингл</td>
+            <td>2019</td>
+            <td>инди-поп</td>
+            <td>2345980</td>
+            <td>187400</td>
+        </tr>
+        <tr>
+            <td>Солнце</td>
+            <td>Джиган</td>
+            <td>Сингл</td>
+            <td>2015</td>
+            <td>хип-хоп</td>
+            <td>7543321</td>
+            <td>432200</td>
+        </tr>
+        <tr>
+            <td>Ветер</td>
+            <td>Мот</td>
+            <td>Сингл</td>
+            <td>2014</td>
+            <td>русская поп-музыка</td>
+            <td>11789400</td>
+            <td>790450</td>
+        </tr>
+        <tr>
+            <td>Дорога</td>
+            <td>Татьяна Буланова</td>
+            <td>Сингл</td>
+            <td>2000</td>
+            <td>русская поп-музыка</td>
+            <td>3456789</td>
+            <td>289500</td>
+        </tr>        
+    </table>
+</body>
+</html>
