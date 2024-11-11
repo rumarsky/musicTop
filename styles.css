@@ -9,18 +9,15 @@
     background-color: #d3d3d3;
     padding: 20px;
     font-size: 24px;
-    text-align: left;
+    text-align: center;
     display: block;
-    width: 96%;
-    margin: 0 auto;
+    width: 20%;
 }
 
 .navbar {
     background-color: #d3d3d3;
     text-align: right;
     padding: 10px 0;
-    width: 96%;
-    margin: 0 auto;
 }
 
 .navbar a {
@@ -36,21 +33,32 @@
 }
 
 .content {
-    text-align: center;
-    padding: 20px;
+    overflow: hidden;
 }
 
-.content img {
-    width: 24%;
-    max-width: 100%;
-    height: auto;
-    margin: 5px 0;
-    display: inline-block;
+.image {
+    display: block;
+    float: left;
+    padding: 5px 0;
+    height: 300px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+.small {
+    width: 20%;
+}
+
+.large {
+    width: 30%;
 }
 
 .logo-section {
     text-align: center;
-    padding: 20px;
+    display: block;
 }
 
 .logo {
@@ -63,7 +71,6 @@
 
 .logo img {
     width: 80px;
-    height: auto;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
@@ -104,15 +111,21 @@
     padding-left: 15px;
 }
 
+.text-section .right:first-child {
+    width: 100%;
+}
+
 .text-section h3 {
     font-size: 20px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .text-section p {
     font-size: 14px;
     margin-bottom: 8px;
     line-height: 1.5;
+    text-align: justify;
 }
 
 .footer {
@@ -126,35 +139,4 @@
     display: inline-block;
     color: #fff;
     text-decoration: none;
-}
-
-@media (max-width: 768px) {
-    .content img, .logo {
-        width: 45%;
-    }
-
-    .text-section .left, .text-section .right {
-        width: 100%;
-        display: block;
-        padding: 0;
-        margin-bottom: 15px;
-    }
-
-    .text-section .right {
-        padding-left: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .content img, .logo img {
-        width: 100%;
-    }
-
-    .text-section h3 {
-        font-size: 18px;
-    }
-
-    .text-section p {
-        font-size: 12px;
-    }
 }
