@@ -1,126 +1,196 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Music Top</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
+    <style>
+        body {
+            font-family: 'Unbounded', sans-serif;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+        }
+        .gallery {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <form>
-            <input type="search">
-            <input type="submit">
-          </form>
+        <nav class="navbar navbar-expand-md bg-light navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Бит и бас</a> 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="music-list.html">Список треков</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Введите для поиска..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Найти</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <nav>
-        <h1>Бит и бас</h1>
-        <a class="active" href="#">Главная</a>
-        <a href="#">Список</a>
-    </nav>
-
-    <main>
-        <div class="gallery">
-            <div class="image"><img src="./img/turbo.jpg" alt="Рисунок"></div>
-            <div class="image"><img src="./img/navsegda.png" alt="Рисунок"></div>
-            <div class="image"><img src="./img/noch.png" alt="Рисунок"></div>
+    <!-- Галерея -->
+    <div class="container gallery">
+        <div class="row mb-3">
+            <div class="col-12 hover-zoom">
+                <a href="turbo.html">
+                    <img src="./img/turbo.jpg" alt="Турбо" class="img-fluid">
+                </a>
+            </div>
         </div>
 
-        <section>
-            <article>
-                <div class="content">
-                    <div class="image"><img src="./img/superSonic.png" alt="Рисунок"></div>
-                    <h3>Supersonic</h3>
-                    <p>
-                        Big Baby Tape и Aarne впервые сработались в 2019 году на EP Егора ARGUMENTS & FACTS в треке «Surname».
-                    </p>
-                    <p>
-                        В ноябре 2020 года они снова поработали на треке «Balance», позже Тейп в августе 2022 году принял участие на альбоме Арни
-                        AA LANGUAGE в треке «Ski Ski». В ноябре этого же года они вместе спродюсировали трек «Murder Rate» для kizaru.
-                    </p>
-                    <p>
-                        В январе 2023 года они выпускают совместный трек «HOODAK MP3», в октябре Тейп появляется на альбоме Арни AA LANGUAGE 2,
-                        где принимает участие в трёх треках, а также в ноябре Арни спродюсировал один трек Тейпа из альбома VARSKVA.
-                    </p>
-                    <p>
-                        28 июля 2024 года дуэт впервые выпускает свой первый совместный альбом PEEKABOO.
-                    </p>
-                </div>
-                <div class="content">
-                    <div class="image"><img src="./img/alabaster.png" alt="Рисунок"></div>
-                    <h3>Ice + Alabaster</h3>
-                    <p>
-                        Ицков Дмитрий Олегович (родился 4 февраля 1997 года в Брянске), наиболее известен как Kai Angel,
-                        является российским рэп-исполнителем, продюсером и звукорежиссёром.
-                    </p>
-                    <p>
-                        Дмитриев Сергей Игоревич (родился 27 августа 2000 года во Владивостоке), наиболее известен как 9mice,
-                        является российским рэп-исполнителем, продюсером и креативным директором.
-                    </p>
-                    <p>
-                        Вместе артисты начали выпускать музыку с осени 2022 года и стали известны после релиза трека «ОТРАВЛЕН ТОБОЙ».
-                    </p>
-                    <p>
-                        Большую популярность исполнители обрели в 2023 году после выпуска совместного альбома HEAVY METAL.
-                        Затем в этом же году они основали творческий рэп-дуэт VIPERR.
-                    </p>
-                </div>
-                <div class="content">
-                    <div class="image"><img src="./img/hurtz.png" alt="Рисунок"></div>
-                    <h3>HURTZ</h3>
-                    <p>
-                        Смелянский Андрей Леонидович (родился 21 марта 2004 года) — российский трэп-исполнитель родом из Москвы. Участник объединения RANDOM CREW.
-                    </p>
-                    <p>
-                        Карьеру начал в 2019 году. Изначально делал песни исключительно на английском языке. Серьёзно начал набирать популярность 22 апреля 2023
-                        года после публикации кружка в своём телеграм-канале, где он имитирует своим голосом мелодию из трека FENDIGLOCK'а — «Допинг».
-                    </p>
-                    <p>
-                        Первый крупный проект после обретения широкой популярности — EP JAZZ DO IT, вышедший в июле 2023 года.
-                    </p>
-                </div>
-            </article>
+        <div class="row">
+            <div class="col-md-6 mb-3 mb-md-0 hover-zoom">
+                <img src="./img/navsegda.png" alt="Навсегда" class="img-fluid">
+            </div>
+            <div class="col-md-6 hover-zoom">
+                <img src="./img/noch.png" alt="Ночь" class="img-fluid">
+            </div>
+        </div>
+    </div>
 
-            <aside>
-                <div class="content">
-                    <div class="text">
-                        <h3>Big Baby Tape</h3>
-                        <p>Big Baby Tape – рэп-исполнитель.</p>
+    <main class="container mt-5">
+        <div class="row">
+            <!-- Основной контент -->
+            <div class="col-lg-8">
+                <div class="row">
+                    <!-- Карточка 1 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="./img/supersonic.png" class="card-img-top" alt="Supersonic" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Supersonic</h5>
+                                <p class="card-text">Big Baby Tape и Aarne впервые сработались в 2019 году на EP Egor ARGUMENTS & FACTS в треке «Surname».</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="image"><img src="./img/big baby tape.png" alt="Рисунок"></div>
+    
+                    <!-- Карточка 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="./img/alabaster.png" class="card-img-top" alt="Ice + Alabaster" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Ice + Alabaster</h5>
+                                <p class="card-text">Дмитрий Олегович (Kai Angel) — российский рэп-исполнитель, продюсер и звукорежиссер.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Карточка 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="./img/hurtz.png" class="card-img-top" alt="HURTZ" style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">HURTZ</h5>
+                                <p class="card-text">Смеляянский Андрей — российский трэп-исполнитель из Москвы. Участник объединения RANDOM CREW.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="content">
-                    <div class="text">
-                        <h3>Lida</h3>
-                        <p>Lida – российский артист.</p>
+            </div>
+    
+            <!-- Боковая панель -->
+            <aside class="col-lg-4">
+                <!-- Первый блок -->
+                <div class="mb-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6>Big Baby Tape</h6>
+                        <p>Big Baby Tape — рэп-исполнитель.</p>
                     </div>
-                    <div class="image"><img src="./img/lida.png" alt="Рисунок"></div>
+                    <img src="./img/big baby tape.png" alt="Big Baby Tape" style="width: 80px; height: 80px; border-radius: 8px;">
                 </div>
-                <div class="content">
-                    <div class="text">
-                        <h3>DK</h3>
-                        <p>DK – талантливый рэпер.</p>
+            
+                <!-- Второй блок -->
+                <div class="mb-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6>Lida</h6>
+                        <p>Lida — российский артист.</p>
                     </div>
-                    <div class="image"><img src="./img/dk.jpg" alt="Рисунок"></div>
+                    <img src="./img/lida.png" alt="Lida" style="width: 80px; height: 80px; border-radius: 8px;">
                 </div>
-                <div class="content">
-                    <div class="text">
-                        <h3>ТДД</h3>
-                        <p>ТДД – российский рэп-исполнитель.</p>
+            
+                <!-- Третий блок -->
+                <div class="mb-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6>DK</h6>
+                        <p>DK — талантливый рэпер.</p>
                     </div>
-                    <div class="image"><img src="./img/tdd.jpg" alt="Рисунок"></div>
+                    <img src="./img/dk.jpg" alt="DK" style="width: 80px; height: 80px; border-radius: 8px;">
+                </div>
+            
+                <!-- Четвертый блок -->
+                <div class="mb-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6>ТДД</h6>
+                        <p>ТДД — российский рэп-исполнитель.</p>
+                    </div>
+                    <img src="./img/tdd.jpg" alt="ТДД" style="width: 80px; height: 80px; border-radius: 8px;">
                 </div>
             </aside>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <p>© Млакир Г.К., Б9122-09.03.04, 2024-2025</p>
-        <a href="#">@glebmlakir</a>
-    <footer>
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <!-- Верхний ряд с информацией -->
+            <div class="row">
+                <!-- О нас -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">О нас</h5>
+                    <p>
+                        Бит и Бас — это место, где вы найдете лучшие треки и музыкальные подборки. Мы создаем вдохновение для вашей музыки.
+                    </p>
+                </div>
+    
+                <!-- Быстрые ссылки -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Быстрые ссылки</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-dark">Главная</a></li>
+                        <li><a href="music-list.html" class="text-dark">Список треков</a></li>
+                        <li><a href="#" class="text-dark">Контакты</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Контакты -->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Контакты</h5>
+                    <p>Email: info@bitibas.com</p>
+                    <p>Телефон: +7 (924) 237-73-17</p>
+                    <p>Адрес: ул. Пушкина, 39, Владивосток</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Нижний ряд с копирайтом -->
+        <div class="text-center p-3 bg-dark text-white">
+            © 2024 Бит и Бас. Все права защищены.
+        </div>
+    </footer>
 </body>
 </html>

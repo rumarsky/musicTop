@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music list</title>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/sort.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="index.html">Главная</a><br>
+    <a href="#"><font size="5">Список треков</font></a>
+    <hr>
+    <!-- <details>
+        <summary>График</summary>
+        <form>
+            <fieldset>
+            <legend><b>Аргумент</b></legend>
+            <input type="radio" name="argue" value="0">Исполнитель<br>
+            <input type="radio" name="argue" value="1">Жанр<br>
+            <input type="radio" name="argue" value="2">Год
+            </fieldset><p></p>
+            <fieldset>
+            <legend><b>Значения</b><br></legend>
+            <input type="checkbox" name="value" value="0">Прослушивания (сумма)<br>
+            <input type="checkbox" name="value" value="1">Количество треков<br>
+            </fieldset>
+            <p><input type="button" value="Построить"></p>
+        </form>
+    </details> -->
+
+    <form id="filter">
+        <p>
+          <label for="track">Название трека:</label>
+          <input type="text" id="track">
+        </p>
+        <p>
+          <label for="artist">Исполнитель:</label>
+          <input type="text" id="artist">
+        </p>
+        <p>
+          <label for="album">Альбом:</label>
+          <input type="text" id="album">
+        </p>
+        <p>
+          <label for="genre">Жанр:</label>
+          <input type="text" id="genre">
+        </p>
+        <p>
+          <label for="year">Год выпуска:</label>
+          от <input type="number" id="yearFrom">
+          до <input type="number" id="yearTo">
+        </p>
+        <p>
+          <label for="plays">Прослушивания:</label>
+          от <input type="number" id="playsFrom"> 
+          до <input type="number" id="playsTo">
+        </p>
+        <p>
+          <input type="button" value="Найти">
+          <input type="button" value="Очистить фильтры">
+        </p>
+    </form>
+
+    <form id="sort">
+        <p> Сортировать по</p>
+        <p>
+          <select id="fieldsFirst">
+          </select> 
+          по убыванию? <input  type="checkbox"  id="fieldsFirstDesc">
+        </p>
+        <p> 
+          <select id="fieldsSecond">
+          </select> 
+          по убыванию? <input  type="checkbox"  id="fieldsSecondDesc">
+        </p>
+        <input type="button" value="Сортировать"> 
+        <input type="button" value="Сбросить сортировку">
+    </form>
+
+    <table id="list">
+    </table>
+
+</body>
+</html>
