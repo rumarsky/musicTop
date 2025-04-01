@@ -46,6 +46,17 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
+        // Находим поле для второго уровня сортировки
+        let fieldsSecond = document.getElementById("fieldsSecond");
+
+        // Добавляем обработчик события change для второго уровня сортировки
+        if (fieldsSecond) {
+            fieldsSecond.addEventListener("change", function () {
+                // Настраиваем поле для третьего уровня сортировки
+                changeNextSelect("fieldsThird", fieldsSecond);
+            });
+        }
+
         // Находим кнопку "Сортировать" по её значению (value)
         let sortButton = document.querySelector('input[value="Сортировать"]');
 
@@ -111,23 +122,27 @@ let setSortSelects = (data, dataForm) => {
     }
 };
 
-// Настраиваем поле для следующего уровня сортировки
+// Настраиваем поле для следующего уровня сортировки и отключаем все последующие, если выбрано "Нет"
 let changeNextSelect = (nextSelectId, curSelect) => {
-    // Находим следующее поле SELECT
     let nextSelect = document.getElementById(nextSelectId);
-
-    // Делаем следующее поле доступным
-    nextSelect.disabled = false;
-
-    // Копируем все опции из текущего SELECT в следующий
-    nextSelect.innerHTML = curSelect.innerHTML;
-
-    // Удаляем в следующем SELECT опцию, выбранную в текущем
-    if (curSelect.value != 0) {
-        // Удаляем опцию с индексом, равным значению текущего SELECT
-        nextSelect.remove(curSelect.value);
-    } else {
-        // Если выбрана опция "Нет", делаем следующее поле недоступным
-        nextSelect.disabled = true;
+    
+    // Если текущий выбор - "Нет" (значение 0), отключаем ВСЕ последующие select
+    if (curSelect.value == 0) {
+        let allSelects = document.querySelectorAll('#sort select');
+        let foundCurrent = false;
+        
+        allSelects.forEach(select => {
+            if (select === curSelect) {
+                foundCurrent = true;
+            } else if (foundCurrent) {
+                select.disabled = true;
+                select.selectedIndex = 0; // Сбрасываем выбор
+            }
+        });
+        return;
     }
+
+    nextSelect.disabled = false;
+    nextSelect.innerHTML = curSelect.innerHTML;
+    nextSelect.remove(curSelect.value);
 };
