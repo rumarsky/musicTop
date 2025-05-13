@@ -132,4 +132,8 @@ let resetSort = (idTable, dataForm) => {
         // Иначе просто создаем таблицу с исходными данными
         createTable(tracks, idTable);
     }
+
+    // Обновляем отфильтрованные данные
+    window.currentFilteredData = filterForm ? 
+        filterTable(tracks, idTable, filterForm) : tracks;
 };

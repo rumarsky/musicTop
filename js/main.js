@@ -79,7 +79,79 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
+
+    // Кнопка для построения графика
+    let button2 = d3.select("#draw");
+    button2.on("click", function() {
+        let check1 = d3.select("#check1").node().checked;
+        let check2 = d3.select("#check2").node().checked;
+    
+        if (!check1 && !check2) {
+            d3.select("#error-message")
+                .text("Выберите хотя бы один график для отображения!")
+                .style("color", "red");
+            d3.select("#check1").node().parentElement.style.color = "red";
+            d3.select("#check2").node().parentElement.style.color = "red";
+            return;
+        }
+    
+        // Получаем текущие отфильтрованные данные из таблицы
+        let filteredData = getFilteredDataFromTable();
+        
+        if (filteredData.length === 0) {
+            d3.select("#error-message")
+                .text("Нет данных для отображения! Проверьте фильтры.")
+                .style("color", "red");
+            return;
+        }
+    
+        d3.select("#error-message").text("");
+        d3.select("#check1").node().parentElement.style.color = "";
+        d3.select("#check2").node().parentElement.style.color = "";
+        
+        // Передаем отфильтрованные данные в drawGraph
+        drawGraph(filteredData);
+    });
+
+    // обработчики событий для автоматического снятия ошибок
+    d3.select("#check1").on("change", function () {
+        if (d3.select("#check1").node().checked || d3.select("#check2").node().checked) {
+            d3.select("#error-message").text("");
+            d3.select("#check1").node().parentElement.style.color = "";
+            d3.select("#check2").node().parentElement.style.color = "";
+        }
+    });
+
+    d3.select("#check2").on("change", function () {
+        if (d3.select("#check1").node().checked || d3.select("#check2").node().checked) {
+            d3.select("#error-message").text("");
+            d3.select("#check1").node().parentElement.style.color = "";
+            d3.select("#check2").node().parentElement.style.color = "";
+        }
+    });
 });
+
+// Добавьте эту функцию для получения данных из таблицы
+function getFilteredDataFromTable() {
+    let table = document.getElementById("list");
+    let rows = table.rows;
+    let filteredData = [];
+    
+    // Пропускаем заголовок (первую строку)
+    for (let i = 1; i < rows.length; i++) {
+        let cells = rows[i].cells;
+        filteredData.push({
+            "Название трека": cells[0].textContent,
+            "Исполнитель": cells[1].textContent,
+            "Альбом": cells[2].textContent,
+            "Год выпуска": parseInt(cells[3].textContent),
+            "Жанр": cells[4].textContent,
+            "Прослушивания": parseInt(cells[5].textContent)
+        });
+    }
+    
+    return filteredData;
+}
 
 // Функция для создания одной опции в select
 let createOption = (str, val) => {

@@ -84,6 +84,11 @@ let filterTable = (data, idTable, dataForm) => {
     // Создаем таблицу с отфильтрованными данными
     createTable(tableFilter, idTable);
 
+    // Сохраняем отфильтрованные данные в глобальной переменной
+    window.currentFilteredData = tableFilter;
+
+    drawGraph();
+
     // Применяем текущую сортировку, если она есть
     let sortForm = document.getElementById("sort");
     if (sortForm) {

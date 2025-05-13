@@ -155,3 +155,16 @@ tr:hover {
         margin-bottom: 10px;
     }
 }
+
+svg {
+    width: 800px;
+    height: 400px;
+}
+svg text {
+    font: 8px Verdana;
+}
+svg path {
+    fill: none;
+    stroke: #333333;
+    width: 1px;
+}

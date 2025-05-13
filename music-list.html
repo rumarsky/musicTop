@@ -5,33 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music list</title>
     <script src="js/data.js"></script>
+    <script src="js/chart.js"></script>
     <script src="js/main.js"></script>
     <script src="js/table.js"></script>
     <script src="js/filter.js"></script>
     <script src="js/sort.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <a href="index.html">Главная</a><br>
     <a href="#"><font size="5">Список треков</font></a>
     <hr>
-    <!-- <details>
-        <summary>График</summary>
-        <form>
-            <fieldset>
-            <legend><b>Аргумент</b></legend>
-            <input type="radio" name="argue" value="0">Исполнитель<br>
-            <input type="radio" name="argue" value="1">Жанр<br>
-            <input type="radio" name="argue" value="2">Год
-            </fieldset><p></p>
-            <fieldset>
-            <legend><b>Значения</b><br></legend>
-            <input type="checkbox" name="value" value="0">Прослушивания (сумма)<br>
-            <input type="checkbox" name="value" value="1">Количество треков<br>
-            </fieldset>
-            <p><input type="button" value="Построить"></p>
-        </form>
-    </details> -->
+
+    <form id="data">
+      <p>Аргумент<br>
+        <label><input type="radio" name="ox" value="Исполнитель" id="firstR" checked>Исполнитель</label><br>
+        <label><input type="radio" name="ox" value="Год выпуска" id="secondR">Год выпуска</label>
+      </p>
+
+      <p>Значение<br>
+        <input type="checkbox" id="check1">
+        <label for="check1" id="tcheck">Максимум прослушиваний</label><br>
+        <input type="checkbox" id="check2">
+        <label for="check2" id="tcheck">Минимум прослушиваний</label>
+      </p>
+
+      <label for="type">Тип графика</label>
+      <select id="type" name="type">
+        <option value="first">Гистограмма</option>
+        <option value="second">Точечный</option>
+        <option value="third">График</option>
+      </select><br>
+
+      <button type="button" id="draw">Построить</button>
+      <p>
+        <span id="error-message" class="error"></span>
+      </p>
+    </form>
+
+    <svg></svg>
 
     <form id="filter">
         <p>
